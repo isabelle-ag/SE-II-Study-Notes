@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SEII_1_intro_to_SE.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="study-notes---comp-4350-software-engineering-ii">Study Notes - COMP 4350 Software Engineering II</h1>
+<h2 id="course-overview">Course Overview</h2>
+<h2 id="project-details">Project Details</h2>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>Project Composition: Team of 4-5</li>
+<li>Objectives:
+<ul>
+<li>Hand-on experience with DevOps tools (e.g., GitHub Action, Docker)</li>
+<li>Quality assurance skills (e.g., load testing, security analysis)</li>
+<li>Implement a complete web application</li>
+</ul>
+</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>At least as many core functional features as team size</li>
+<li>Non-functional requirement: handle 20 users with 200 requests per minute concurrently</li>
+<li>Open choice of programming language, framework, and tech stack</li>
+<li>TA acts as customer</li>
+</ul>
+<h3 id="timeline">Timeline</h3>
+<ul>
+<li>Proposal + Presentation: 5%</li>
+<li>Progress Tracking: 20% (Across 4 sprints, each sprint 5%)</li>
+<li>Technique Sharing Seminar: 5%</li>
+<li>Final Project Presentation: 10%</li>
+<li>Final Project Deliverable: 20%</li>
+<li>Peer Evaluation: Adjusts individual grades based on team contribution</li>
+</ul>
+<h3 id="milestones">Milestones</h3>
+<ul>
+<li><strong>Proposal</strong>: Includes project summary, core features, frameworks, and user stories. Presentation required.</li>
+<li><strong>Tracking</strong>: Sprints span 2-4 weeks, with concrete tasks to be accomplished in each.</li>
+<li><strong>Evaluation</strong>: TAs provide feedback and test the software at each sprint's end.</li>
+<li><strong>Seminar</strong>: Share techniques and frameworks with the class.</li>
+<li><strong>Final Presentation</strong>: Features live demo and lessons learned.</li>
+<li><strong>Final Deliverable</strong>: Includes documentation (user stories, design, manuals, reports) and source code (product code, test cases, CI/CD scripts, Docker image).</li>
+</ul>
+<h2 id="github-use">GitHub Use</h2>
+<ul>
+<li>Central for project management</li>
+<li>Discussions, meeting minutes, and code reviews documented</li>
+<li>Code review before committing</li>
+<li>Track issues using GitHub</li>
+</ul>
+<h2 id="project-management">Project Management</h2>
+<ul>
+<li>Version control with GitHub</li>
+<li>Automate processes with DevOps pipeline</li>
+<li>Team formation within the first week</li>
+</ul>
+<h2 id="course-content">Course Content</h2>
+<h3 id="software-engineering-in-data-mining--ml">Software Engineering in Data Mining &amp; ML</h3>
+<ul>
+<li>Application of AI for software engineering tasks (API recommendation, code completion, debugging)</li>
+<li>Data analytics on software artifacts (Stack Overflow, GitHub, AppStore)</li>
+<li>Software security considerations</li>
+</ul>
+<h3 id="core-topics">Core Topics</h3>
+<ul>
+<li>DevOps (Configuration management, CI/CD, AI)</li>
+<li>Software Architecture (Microservices)</li>
+<li>Software Quality Assurance (Advanced Testing, Mutation, Load, Performance Testing)</li>
+<li>Security Analysis</li>
+<li>Refactoring &amp; Research in SE</li>
+<li>Data-Driven SE</li>
+</ul>
+<h3 id="books--resources">Books &amp; Resources</h3>
+<ul>
+<li>Recommended reading uploaded on UMLearn</li>
+</ul>
+<h2 id="final-test-details">Final Test Details</h2>
+<ul>
+<li><strong>Open book exam</strong>: 40% of final grade</li>
+<li>Will cover all course material</li>
+<li>Date and location announced by Student Records Office</li>
+</ul>
+<h2 id="policies--general-information">Policies &amp; General Information</h2>
+<ul>
+<li>Late submissions: Acceptable up to 2 days with a penalty (10% per late day)</li>
+<li>Re-grading: 7 days available for re-grading requests</li>
+<li>Generative AI: Allowed as a learning aid; require disclosures along with the prompts used</li>
+</ul>
+<h2 id="software-engineering-principles">Software Engineering Principles</h2>
+<h3 id="software-crisis--engineering">Software Crisis &amp; Engineering</h3>
+<ul>
+<li>The &quot;Software Crisis&quot;: Over-budget, over-time, inefficient, low quality, and not meeting requirements</li>
+<li>Software engineering brings systematic, rigorous, and measurable approaches to software development</li>
+</ul>
+<h3 id="software-engineering-activities">Software Engineering Activities</h3>
+<ul>
+<li><strong>Specification</strong>: Defining what the software should do</li>
+<li><strong>Development</strong>: Producing the system</li>
+<li><strong>Evolution</strong>: Responding to changing requirements or environments</li>
+<li><strong>Validation</strong>: Ensuring the system meets needs and requirements</li>
+</ul>
+<h3 id="software-process-phases">Software Process Phases</h3>
+<ul>
+<li>Different processes share similar elements but differ in organization</li>
+<li>Examples: Waterfall vs. Agile (Scrum)</li>
+</ul>
+<h3 id="software-engineering-fundamentals">Software Engineering Fundamentals</h3>
+<ul>
+<li>Managed development process for all software types</li>
+<li>Key aspects: Reliability and Performance</li>
+</ul>
+<h3 id="software-quality-assurance">Software Quality Assurance</h3>
+<ul>
+<li>Frequent mobile app updates pose risks of new bugs; quality assurance aims to mitigate such risks</li>
+</ul>
+<h3 id="slide-1">Slide: 1</h3>
+<p>Title: Comp 4350 - Software Engineering II - Lecture 1
+Dr. Shaowei Wang</p>
+<h3 id="slide-2">Slide: 2</h3>
+<p>Body:
+Research into data mining and software engineering</p>
+<ul>
+<li>Machine learning for software engineering (e.g., API recommendation, code completion)</li>
+<li>Data analytics on software artifacts (e.g., Stack Overflow, GitHub, AppStore)</li>
+<li>Auto debugging (e.g., bug localization, fault localization)</li>
+<li>Software security
+Contact: shaowei.wang@umanitoba.ca
+Website: <a href="https://sites.google.com/view/mambalab">Dr. Shaowei Wang - UM Website</a></li>
+</ul>
+<h3 id="slide-3">Slide: 3</h3>
+<p>Title: About me (Shaowei Wang)
+About the course:</p>
+<ul>
+<li>Course website on UMLearn</li>
+<li>Check regularly for announcements and updates</li>
+<li>Lectures: 60 mins lecture + 15mins Q&amp;A</li>
+<li>All slides will be posted on UMLearn after class</li>
+</ul>
+<h3 id="slide-4">Slide: 4</h3>
+<p>Contact &amp; Office Hours:
+Dr. Shaowei Wang</p>
+<ul>
+<li>Tuesday 9am-11am, EITC-E2-408
+TAs:</li>
+<li>Xu Yang <a href="mailto:yangx4@myumanitoba.ca">yangx4@myumanitoba.ca</a>Office hour: TBD</li>
+<li>Shayan Daneshvar <a href="mailto:daneshvs@myumanitoba.ca">daneshvs@myumanitoba.ca</a>Office hour: TBD</li>
+<li>Cody Wallbridge <a href="mailto:wallbric@myumanitoba.ca">wallbric@myumanitoba.ca</a>Office hour: TBD</li>
+</ul>
+<h3 id="slide-5">Slide: 5</h3>
+<p>What are we doing here?</p>
+<h3 id="slide-6">Slide: 6</h3>
+<p>Title: What are we doing here?
+Cover topics:</p>
+<ul>
+<li>DevOps</li>
+<li>Configuration management</li>
+<li>Continuous integration</li>
+<li>Continuous deployment</li>
+<li>AI for DevOps</li>
+<li>Architecture (microservice)</li>
+<li>Software quality assurance</li>
+<li>Advanced testing (Mutation, Load, Performance)</li>
+<li>Security analysis</li>
+<li>Refactoring</li>
+<li>Research in software engineering</li>
+<li>Machine learning for software engineering</li>
+<li>Data-driven software engineering</li>
+</ul>
+<h3 id="slide-7">Slide: 7</h3>
+<p>Title: Recommended Books (Uploaded on UMLearn)</p>
+<h3 id="slide-8">Slide: 8</h3>
+<p>How will the course be evaluated?
+Title: Overall evaluation scheme
+Final exam: 40%
+Project: 60%</p>
+<h3 id="slide-9">Slide: 9</h3>
+<p>Final exam: 40%
+Project: 60%</p>
+<h3 id="slide-10">Slide: 10</h3>
+<p>What is the project about?</p>
+<h3 id="slide-11">Slide: 11</h3>
+<p>Title: Project topic
+A team of 4 or 5 students in the course to build a software system:</p>
+<ul>
+<li>Web application with front and back ends</li>
+<li>Core functional features equivalent to team size</li>
+<li>Non-functional requirement: Handle 20 users with 200 requests per minute</li>
+<li>TA acts as the customer</li>
+<li>Any programming language, framework, and tech stack</li>
+</ul>
+<h3 id="slide-12">Slide: 12</h3>
+<p>Goal of project:</p>
+<ul>
+<li>Obtain hands-on experience/skills of DevOps and software quality assurance</li>
+<li>Create a significant project</li>
+</ul>
+<h3 id="slide-13">Slide: 13</h3>
+<p>How will the project be tracked and evaluated?
+Team project (60%):</p>
+<ul>
+<li>Project proposal + presentation (5%)</li>
+<li>Progress tracking (20%, 4 sprints, each 5%)</li>
+<li>Technique sharing seminar (5%)</li>
+<li>Final project presentation (10%)</li>
+<li>Final project deliverable (20%)</li>
+<li>Peer evaluation</li>
+</ul>
+<h3 id="slide-14">Slide: 14</h3>
+<p>Each team will submit a project proposal, including:</p>
+<ul>
+<li>Project summary</li>
+<li>Core features</li>
+<li>Technique or framework</li>
+<li>User stories for core features</li>
+<li>Present proposed project in class (10 mins)</li>
+</ul>
+<h3 id="slide-15">Slide: 15</h3>
+<p>Title: Progress tracking</p>
+<ul>
+<li>4 sprints (2-4 weeks each)</li>
+<li>Each sprint needs concrete tasks finished</li>
+<li>Detailed instructions for TAs to evaluate</li>
+</ul>
+<h3 id="slide-16-23">Slide: 16-23</h3>
+<p>Content placeholders</p>
+<h3 id="slide-24">Slide: 24</h3>
+<p>Title: First thing to do!</p>
+<ul>
+<li>Build the team</li>
+<li>Team leader confirmed in the first week</li>
+<li>Team registration <a href="https://docs.google.com/spreadsheets/d/1ewp5bUNU8EbpPAQqRLjMIKLyGNiLejSgUvC55txSoIA/edit?usp=sharing">Google Sheet</a></li>
+</ul>
+<h3 id="slide-25">Slide: 25</h3>
+<p>Final test (40%):</p>
+<ul>
+<li>Open book</li>
+<li>Time and location announced by Student Records Office</li>
+</ul>
+<h3 id="slide-26">Slide: 26</h3>
+<p>Title: What do I need to succeed?</p>
+<ul>
+<li>Take the test seriously</li>
+<li>Active class participation</li>
+<li>Software development and delivery process knowledge</li>
+<li>Teamwork and support</li>
+</ul>
+<h3 id="slide-27">Slide: 27</h3>
+<p>Policy:</p>
+<ul>
+<li>Late submission penalty</li>
+<li>Re-grading window</li>
+<li>Guidelines on using Generative AI</li>
+</ul>
+<h3 id="slide-28">Slide: 28</h3>
+<p>Introduction to Software Engineering</p>
+<h3 id="slide-29">Slide: 29</h3>
+<p>Title: Software is everywhere!</p>
+<h3 id="slide-30-33">Slide: 30-33</h3>
+<p>Content placeholders</p>
+<h3 id="slide-34-39">Slide: 34-39</h3>
+<p>Content related to software complexity and challenges</p>
+<h3 id="slide-40">Slide: 40</h3>
+<p>Title: What is this?</p>
+<h3 id="slide-41">Slide: 41</h3>
+<p>Title: “Software Crisis”
+Challenges faced in software projects leading to the emergence of Software Engineering principles</p>
+<h3 id="slide-42-43">Slide: 42-43</h3>
+<p>Explanation of Software Engineering scope and activities</p>
+<h3 id="slide-44-45">Slide: 44-45</h3>
+<p>Software process phases and an overview of Scrum</p>
+<h3 id="slide-46">Slide: 46</h3>
+<p>Title: Software engineering fundamentals (I)</p>
+<ul>
+<li>Principles applicable to all software systems</li>
+</ul>
+<h3 id="slide-47">Slide: 47</h3>
+<p>Rapid update of Mobile apps <a href="https://testlio.com/blog/how-often-should-you-update-your-mobile-app/">Link</a></p>
+<h3 id="slide-48">Slide: 48</h3>
+<p>Title: How to reduce the risk of introducing new bugs when making changes to the software?</p>
+<h3 id="slide-49">Slide: 49</h3>
+<p>Title: Software quality assurance</p>
+<h3 id="slide-50">Slide: 50</h3>
+<p>Title: Actions
+Actions to ensure software quality and reliability</p>
+<h3 id="slide-51">Slide: 51</h3>
+<p>Title: Software Quality Assurance
+A set of activities designed to ensure that the software under consideration meets all requirements and specifications</p>
+<h3 id="slide-52">Slide: 52</h3>
+<p>Policy:</p>
+<ul>
+<li>Late submission penalty</li>
+<li>Re-grading window</li>
+<li>Guidelines on using Generative AI</li>
+</ul>
+
+</body>
+</html>
