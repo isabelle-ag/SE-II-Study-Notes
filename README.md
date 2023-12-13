@@ -1,2 +1,0 @@
-# SE II Study Notes
- 
