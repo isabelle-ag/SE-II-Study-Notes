@@ -103,7 +103,6 @@
 ---
 
 
-```markdown
 ### Slide: 1
 **Title:** Software Engineering II  
 **SubTitle:** Data-driven Software Engineering -2  

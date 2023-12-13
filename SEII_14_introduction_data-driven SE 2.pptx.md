@@ -1,4 +1,3 @@
-```markdown
 # Software Engineering II - Study Notes
 
 ## Administrative Details
@@ -81,6 +80,6 @@
 
 ## Coverage
 - Remember topics such as the ones mentioned above that are specified in the class notes provided for the exam preparation.
-```
+
 
 These notes are structured in a way to reflect the key topics mentioned in the lecture slides, organized sequentially for ease of review during the open-book exam. The markdown format allows for the straightforward addition of code or further notes if necessary during the study process or the exam itself.
