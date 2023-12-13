@@ -1,310 +1,292 @@
-### Study Notes for Comp 4350: Software Engineering II, Lecture 1
+# Study Notes - COMP 4350 Software Engineering II
 
-#### I. Key Concepts
-- **Main Idea 1:** Introduction to the course, instructor, and the educational focus on data mining, machine learning, and other software engineering methodologies.
-- **Main Idea 2:** Essentials of course communication details, office hours, and course format which includes lectures, Q&A, and regular updates on UMLearn.
-- **Main Idea 3:** Detailed explanation of the course project, its requirements, and evaluation method, emphasizing the hands-on experience of DevOps and software quality assurance.
+## Course Overview
 
-#### II. Definitions
-- **DevOps:** A set of practices that combines software development and IT operations to shorten the development life cycle and provide continuous delivery with high software quality.
-- **Software Quality Assurance (SQA):** Consists of a means of monitoring the software engineering processes and methods used to ensure quality.
+## Project Details
 
-#### III. Important Details
-- **Point 1:** Course communication primarily through UMLearn and direct email with Dr. Shaowei Wang; course materials and announcements will be posted on UMLearn.
-- **Point 2:** Project-driven course structure—students will form teams to develop a web application incorporating DevOps tools and meet specified requirements.
-- **Point 3:** A detailed breakdown of project tracking and evaluations—submission of project proposals, progress tracking through sprints, seminars for technique sharing, and final project presentation and deliverables.
+### Overview
+- Project Composition: Team of 4-5
+- Objectives:
+  - Hand-on experience with DevOps tools (e.g., GitHub Action, Docker)
+  - Quality assurance skills (e.g., load testing, security analysis)
+  - Implement a complete web application
 
-#### IV. Diagrams/Visual Aids
-- **Diagram 1:** N/A for this session.
-- **Diagram 2:** N/A for this session.
-- **Diagram 3:** N/A for this session.
+### Requirements
+- At least as many core functional features as team size
+- Non-functional requirement: handle 20 users with 200 requests per minute concurrently
+- Open choice of programming language, framework, and tech stack
+- TA acts as customer
 
-#### V. Key Formulas/Theorems
-- **Formula/Theorem 1:** N/A for this session.
-- **Formula/Theorem 2:** N/A for this session.
-- **Formula/Theorem 3:** N/A for this session.
+### Timeline
+- Proposal + Presentation: 5%
+- Progress Tracking: 20% (Across 4 sprints, each sprint 5%)
+- Technique Sharing Seminar: 5%
+- Final Project Presentation: 10%
+- Final Project Deliverable: 20%
+- Peer Evaluation: Adjusts individual grades based on team contribution
 
-#### VI. Examples
-- **Example 1:** Team project evaluation based on individual contributions—illustrative distribution of marks depending on members' percentage of contribution.
-- **Example 2:** Usage of GitHub for version control, code review, and discussion tracking in project management.
-- **Example 3:** Applying agile methodologies like Scrum to software engineering projects for iterative and incremental development.
+### Milestones
+- **Proposal**: Includes project summary, core features, frameworks, and user stories. Presentation required.
+- **Tracking**: Sprints span 2-4 weeks, with concrete tasks to be accomplished in each.
+- **Evaluation**: TAs provide feedback and test the software at each sprint's end.
+- **Seminar**: Share techniques and frameworks with the class.
+- **Final Presentation**: Features live demo and lessons learned.
+- **Final Deliverable**: Includes documentation (user stories, design, manuals, reports) and source code (product code, test cases, CI/CD scripts, Docker image).
 
-#### VII. Summary/Conclusion
-- **Recap of Main Points:** Introduction to the course, the significance of data analytics, machine learning in SE, course communication methods, project focus, and evaluation criteria have been outlined.
-- **Connections between Concepts:** The course integrates principles of SQA, DevOps, and agile methodologies to emphasize the importance of systematic, rigorous, and measurable software development.
+## GitHub Use
 
-#### VIII. Additional Resources
-- **Textbook Pages:** Check UMLearn for uploaded recommended textbooks under Content->Recommended text books.
-- **Online Resources:** Visit https://sites.google.com/view/mambalab for instructor resources and engage in team collaboration through the specified Google Docs sheet for team information.
+- Central for project management
+- Discussions, meeting minutes, and code reviews documented
+- Code review before committing
+- Track issues using GitHub
 
-Notes:
-- Doctor Shaowei Wang specializes in data mining and software engineering.
-- Key topics include DevOps principles, software security, and advanced testing techniques.
-- The final exam contributes to 40% and the project to 60% of the course evaluation.
-- The project demands practical demonstration of learned skills and includes multiple assessments.
-- Use of generative AI tools is allowed for assignments but needs proper documentation and referencing.
+## Project Management
 
----
+- Version control with GitHub
+- Automate processes with DevOps pipeline
+- Team formation within the first week
 
-Notes: 
-Comp 4350Software Engineering IILecture 1
+## Course Content
+
+### Software Engineering in Data Mining & ML
+
+- Application of AI for software engineering tasks (API recommendation, code completion, debugging)
+- Data analytics on software artifacts (Stack Overflow, GitHub, AppStore)
+- Software security considerations
+
+### Core Topics
+
+- DevOps (Configuration management, CI/CD, AI)
+- Software Architecture (Microservices)
+- Software Quality Assurance (Advanced Testing, Mutation, Load, Performance Testing)
+- Security Analysis
+- Refactoring & Research in SE
+- Data-Driven SE
+
+### Books & Resources
+
+- Recommended reading uploaded on UMLearn
+
+## Final Test Details
+
+- **Open book exam**: 40% of final grade
+- Will cover all course material
+- Date and location announced by Student Records Office
+
+## Policies & General Information
+
+- Late submissions: Acceptable up to 2 days with a penalty (10% per late day)
+- Re-grading: 7 days available for re-grading requests
+- Generative AI: Allowed as a learning aid; require disclosures along with the prompts used
+
+## Software Engineering Principles
+
+### Software Crisis & Engineering
+
+- The "Software Crisis": Over-budget, over-time, inefficient, low quality, and not meeting requirements
+- Software engineering brings systematic, rigorous, and measurable approaches to software development
+
+### Software Engineering Activities
+
+- **Specification**: Defining what the software should do
+- **Development**: Producing the system
+- **Evolution**: Responding to changing requirements or environments
+- **Validation**: Ensuring the system meets needs and requirements
+
+### Software Process Phases
+
+- Different processes share similar elements but differ in organization
+- Examples: Waterfall vs. Agile (Scrum)
+
+### Software Engineering Fundamentals
+
+- Managed development process for all software types
+- Key aspects: Reliability and Performance
+
+### Software Quality Assurance
+
+- Frequent mobile app updates pose risks of new bugs; quality assurance aims to mitigate such risks
+
+
+### Slide: 1
+Title: Comp 4350 - Software Engineering II - Lecture 1
 Dr. Shaowei Wang
+
+### Slide: 2
+Body:
 Research into data mining and software engineering
-Machine learning for software engineering (e.g., API recommendation, code completion)
-data analytics on software artifacts (e.g., Stack Overflow, GitHub, AppStore)
-auto debugging (e.g., bug localization, fault localization)
-Software security
-Contact
-shaowei.wang@umanitoba.ca
-https://sites.google.com/view/mambalab
-2
-About me (Shaowei Wang)
-About the course
-3
-Course website
-On UMLearn 
-Check regularly for announcements and updates
-Lectures
-60 mins lecture + 15mins Q&A
-All slides will be posted on UMLearn after class
-4
-Contact & Office Hours
+- Machine learning for software engineering (e.g., API recommendation, code completion)
+- Data analytics on software artifacts (e.g., Stack Overflow, GitHub, AppStore)
+- Auto debugging (e.g., bug localization, fault localization)
+- Software security
+Contact: shaowei.wang@umanitoba.ca
+Website: [Dr. Shaowei Wang - UM Website](https://sites.google.com/view/mambalab)
+
+### Slide: 3
+Title: About me (Shaowei Wang)
+About the course:
+- Course website on UMLearn
+- Check regularly for announcements and updates
+- Lectures: 60 mins lecture + 15mins Q&A
+- All slides will be posted on UMLearn after class
+
+### Slide: 4
+Contact & Office Hours:
 Dr. Shaowei Wang
-Tuesday 9am-11am, EITC-E2-408
+- Tuesday 9am-11am, EITC-E2-408
 TAs:
-Xu Yang <yangx4@myumanitoba.ca>Office hour: TBD
-Shayan Daneshvar <daneshvs@myumanitoba.ca>Office hour: TBD
-Cody Wallbridge <wallbric@myumanitoba.ca>Office hour: TBD
+- Xu Yang <yangx4@myumanitoba.ca>Office hour: TBD
+- Shayan Daneshvar <daneshvs@myumanitoba.ca>Office hour: TBD
+- Cody Wallbridge <wallbric@myumanitoba.ca>Office hour: TBD
 
-
-
-
+### Slide: 5
 What are we doing here?
-What are we doing here?
+
+### Slide: 6
+Title: What are we doing here?
 Cover topics:
-DevOps
-Configuration management 
-Continuous integration
-Continuous deployment
-AI for DevOps
-Architecture
-microservice
-Software quality assurance
-Advanced testing
-Mutation testing
-Load testing
-Performance testing
-…
-Security analysis
-Refactoring 
-Research in software engineering 
-Machine learning for software engineering
-Data-driven software engineering
-…
+- DevOps
+- Configuration management 
+- Continuous integration
+- Continuous deployment
+- AI for DevOps
+- Architecture (microservice)
+- Software quality assurance
+- Advanced testing (Mutation, Load, Performance)
+- Security analysis
+- Refactoring 
+- Research in software engineering 
+- Machine learning for software engineering
+- Data-driven software engineering
 
-6
-Recommend Books
-Uploaded on UMLearm (Content->Recommended text books)
-7
-
-
-
-
-
+### Slide: 7
+Title: Recommended Books (Uploaded on UMLearn)
+### Slide: 8
 How will the course be evaluated?
-9
+Title: Overall evaluation scheme
 Final exam: 40%
 Project: 60%
-Overall evaluation scheme
 
+### Slide: 9
+Final exam: 40%
+Project: 60%
 
-
-
+### Slide: 10
 What is the project about?
-11
-Project topic
 
-A team of 4 or 5 students in the course to build a software system 
-Web application with front and back ends
-At least have the same number of core functional features as team size
-Meet the following non-functional requirement i.e., can response 20 users with a total of 200 requests per minute concurrently.
-Your TA is your customer
-You can use any programming language, framework, and tech stack.
+### Slide: 11
+Title: Project topic
+A team of 4 or 5 students in the course to build a software system:
+- Web application with front and back ends
+- Core functional features equivalent to team size
+- Non-functional requirement: Handle 20 users with 200 requests per minute
+- TA acts as the customer
+- Any programming language, framework, and tech stack
 
-Goal of project
-Through the project 
-Obtain hand-on experience/skills of DevOps (tools like GitHub Action and Docker)
-Obtain hand-on experience/skills of software quality assurance (e.g., load testing and security analysis)
+### Slide: 12
+Goal of project:
+- Obtain hands-on experience/skills of DevOps and software quality assurance
+- Create a significant project
 
-Create a cool project
-Team project (a total of 60%):
-Project proposal + presentation (5%)
-Progress tracking (20%, 4 sprints, each sprint 5%)
-Technique sharing seminar (5%)
-Final project presentation (10%)
-Final project deliverable (20%)
-Peer evaluation
-13
-How will project be tracked and evaluated?
-Each team will submit a project proposal, which includes (template found on UMLearn)
-project summary
-core features
-Technique or framework
-user stories for core features 
-Present their proposed project in the class (10 mins) 
+### Slide: 13
+How will the project be tracked and evaluated?
+Team project (60%):
+- Project proposal + presentation (5%)
+- Progress tracking (20%, 4 sprints, each 5%)
+- Technique sharing seminar (5%)
+- Final project presentation (10%)
+- Final project deliverable (20%)
+- Peer evaluation
 
-Project proposal + presentation
-15
-Progress tracking
-The entire project is due in 4 sprints.
-Each sprint is 2-4 weeks.
-From the 2nd sprint, each sprint needs concrete tasks finished, e.g., features implemented, testing, or bugs fixed, CI/CD pipeline implemented.
+### Slide: 14
+Each team will submit a project proposal, including:
+- Project summary
+- Core features
+- Technique or framework
+- User stories for core features
+- Present proposed project in class (10 mins)
 
-16
-17
-Evaluation of each sprint
+### Slide: 15
+Title: Progress tracking
+- 4 sprints (2-4 weeks each)
+- Each sprint needs concrete tasks finished
+- Detailed instructions for TAs to evaluate
 
-Let your TA try out your software and get feedback of the software from TA (customer). 
+### Slide: 16-23
+Content placeholders
 
-From sprint 2, at the end of each spring, you should have a working system and detailed instruction for installation for TAs to evaluate.
+### Slide: 24
+Title: First thing to do!
+- Build the team
+- Team leader confirmed in the first week
+- Team registration [Google Sheet](https://docs.google.com/spreadsheets/d/1ewp5bUNU8EbpPAQqRLjMIKLyGNiLejSgUvC55txSoIA/edit?usp=sharing)
 
-Each team will be responsible for holding a seminar in the middle of the term. These presentation and discussion sessions will be used to share your learning with other teams, e.g., techniques, frameworks
-Technique sharing seminar
-19
-Final project presentation
-Introduce your project
-Live demo  
-core features
-Techniques aspect
-Lessons learnt from the project
-…
-We will invite all other teams to evaluate
+### Slide: 25
+Final test (40%):
+- Open book
+- Time and location announced by Student Records Office
 
+### Slide: 26
+Title: What do I need to succeed?
+- Take the test seriously
+- Active class participation
+- Software development and delivery process knowledge
+- Teamwork and support
 
-20
-Final deliverable
-Documentation:
-Requirements specification (user stories)
-Design (e.g., class diagram)
-User manual
-Testing report
-Security scanning report
-…
-Source code:
-Product code
-Test cases
-CI/CD scripts
-Docker image
-…
-*Found more in release template (UMLearn -> Content -> Course project)
-Peer evaluation
-Your individual project mark will be assigned by starting with project mark and then weighting it based on your contribution to the work of the team as reported by your fellow team members.
+### Slide: 27
+Policy:
+- Late submission penalty
+- Re-grading window
+- Guidelines on using Generative AI
 
-The contribution from team members M1 to M4 are 30%,30%,20%,20%, the project mark is 50. The final project grade for M1 to M4 are 50*30/25 = 60, 60,  50*20/25 = 40, 40 
-
-22
-Using GitHub
-Manage everything on GitHub.
-Other than the code and necessary docs, all the discussion or meeting minutes need to be recorded on GitHub. 
-Discussion offline or on other platform needs to be documented on GitHub.
-Code review is needed.
-Someone else in your team need to read your code before committing after passing test cases.
-Everything needs to be referenced.
-Use GitHub to track issues.
-23
-Managing your project
-Version control everything on GitHub.
-Automate everything with Devops pipeline
-
-
-
-24
-First thing to do!
-Build the team. 
-Team leader needs to be confirmed in the first week.
-If you do not have a team, leave comments in the google doc. 
-
-Please fill your team information here 
-https://docs.google.com/spreadsheets/d/1ewp5bUNU8EbpPAQqRLjMIKLyGNiLejSgUvC55txSoIA/edit?usp=sharing 
-
-
-
-Final test (40%)
-There will be a final test that will cover course material from class. 
-Open book.
-The time and location will be announced by the Student Records Office. 
-What do I need to succeed?
-Take the test seriously
-Participate class 
-This course is NOT just for programming! Learn and follow the software development and delivery process
-Work as a team.
-Be fair and supportive to your team members
-26
-
-Late submission. Students (student groups) can turn in their assignments and laboratory deliverables up to 2 calendar dates late. The penalty for lateness is that, for being late by each calendar date, a 10% of the actually obtained grade will be deducted.
-Re-grading. Students (student groups) have up to 7 days from the time the graded assignment/test or laboratory deliverable is available to request a re-grading, if there is a disagreement with a grade. Weekends and holidays count when calculating re-grading request days. No re-grading will be done after this period. Re-grading requests shall be made to the instructor directly. 
-Generative Artificial Intelligence (genAI):  Students may not use artificial intelligence tools for taking tests. However, Students may use artificial intelligence tools, including generative AI, in this course as learning aids or to gather information from across sources and assimilating it for understanding. If genAI was used, students must submit, as an appendix with their assignments, any content produced by an artificial intelligence tool, and the prompt used to generate the content. 
-E.g., generate code using ChatGPT, put the setting of ChatGPT, and prompt in the comments.
-27
-
-Policy
+### Slide: 28
 Introduction to Software Engineering
 
-Software is everywhere!
-29
+### Slide: 29
+Title: Software is everywhere!
 
+### Slide: 30-33
+Content placeholders
 
-Generative AI
-Write code
-Write story/poem
-Explain concept
+### Slide: 34-39
+Content related to software complexity and challenges
 
-How many lines of code?
-More than 100 Million lines of code!
-No natural limits to the potentialof software, .e.g, lack of physical constraints, software systems can quickly become extremely big and complex. 
-Make it difficult to understand, and expensive to change. 
-What is this?
-“Software Crisis” 
-Projects running over-budget
-Projects running over-time
-Software was very inefficient
-Software was of low quality
-Software often did not meet requirements
-Projects were unmanageable and the code was difficult to maintain
-Software was never delivered
-Therefore, Software Engineering is engineering principles to build software systematically, rigorously, measurably, on time, on budget, and within specification.
-Software engineering
+### Slide: 40
+Title: What is this?
 
-All aspects of software production
-Not just technical process of development, also project management and the development of tools, methods etc. to support software production.
+### Slide: 41
+Title: “Software Crisis”
+Challenges faced in software projects leading to the emergence of Software Engineering principles
 
-Main software engineering activities
-Specification
-Development
-Evolution
-Validation
-Software Process Phases
-There are many different software processes, but they all share the same basic elements.  
+### Slide: 42-43
+Explanation of Software Engineering scope and activities
 
-The difference is in how these elements are organized.
-real-time software in an aircraft has to be completely specified (i.e., Specification) before development (i.e., Development) begins - waterfall 
-mobile apps, which require short release circle,  the specification and the program are usually developed together – agile 
-
-Overview of Scrum
-45
-Scrum is an agile method that focuses on managing iterative development that 
+### Slide: 44-45
+Software process phases and an overview of Scrum
 
-Software engineering fundamentals (I)
-Some fundamental principles apply to all types of software system, irrespective of the development techniques used:
+### Slide: 46
+Title: Software engineering fundamentals (I)
+- Principles applicable to all software systems
 
-Systems should be developed using a managed and understood development process. Of course, different processes are used for different types of software.
+### Slide: 47
+Rapid update of Mobile apps [Link](https://testlio.com/blog/how-often-should-you-update-your-mobile-app/)
 
-Reliability (e.g., time of running without bugs) and performance (e.g., query response time) are important for all types of system. 
-Rapid update of Mobile apps
-https://testlio.com/blog/how-often-should-you-update-your-mobile-app/
-How to reduce the risk of introducing new bugs when making changes to the software?
+### Slide: 48
+Title: How to reduce the risk of introducing new bugs when making changes to the software?
 
+### Slide: 49
+Title: Software quality assurance
 
+### Slide: 50
+Title: Actions
+Actions to ensure software quality and reliability
 
-Software quality assurance
-Actions
+### Slide: 51
+Title: Software Quality Assurance
+A set of activities designed to ensure that the software under consideration meets all requirements and specifications
+
+### Slide: 52
+Policy:
+- Late submission penalty
+- Re-grading window
+- Guidelines on using Generative AI

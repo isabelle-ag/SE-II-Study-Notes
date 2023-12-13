@@ -1,635 +1,550 @@
-### Study Notes for Data-driven Software Engineering
+# Study Notes for Software Engineering II
 
-#### I. Key Concepts
-- **Main Idea 1:** Big data generated in software development can be leveraged for various engineering tasks using data mining techniques.
-- **Main Idea 2:** Source code artifacts come in different languages, complexities, and styles, and can be analyzed for code recommendation, clone detection, and completion.
-- **Main Idea 3:** Issue reports containing bug and feature requests can be utilized for bug localization and recommending developers to fix issues.
+## Data-Driven Software Engineering
+- **Big Data in Software Engineering:**
+  - Large amounts of artifacts generated during software development.
+  - Increased data from software archives in open-source projects.
 
-#### II. Definitions
-- **Artifact:** A product generated during the software development process.
-- **Vector Space Model (VSM):** A mathematical model to represent text documents as vectors of identifiers such as, but not limited to, the term-frequency-inverse-document-frequency (TF-IDF) weights.
-- **Code Clone:** Code fragments exhibiting similar semantics or functionality, potentially duplicative or derived from one another.
+## Software Data Types
+- **Source Code:**
+  - Found on platforms like GitHub.
+  - Analyzed via automatic parsing and understanding, modeled using program analysis tools.
+  - Challenges: Various languages, complexities, scales, systems, programming styles.
 
-#### III. Important Details
-- **Point 1:** CodeHow is a search engine that leverages API documentation for effective code search.
-- **Point 2:** Extended Boolean Model measures the similarity between an extended query and code snippets.
-- **Point 3:** Bug localization techniques model the similarity between bug reports and source files, and the bug proneness of files based on their history.
+## Applications of Source Code Analysis
+- Code recommendation.
+- Clone detection.
+- Code completion.
 
-#### IV. Diagrams/Visual Aids
-- **Diagram 1:** Abstract Syntax Tree representing the hierarchical structure of source code and its components.
-- **Diagram 2:** Vector representation of queries and documents for retrieval in VSM.
-- **Diagram 3:** Topic Modeling visualization showcasing the distribution of topics within documents and words within topics.
+## CodeHow: Code Search Enhancement
+- Combines API recommendation with source code search.
+- Utilizes API documentation to identify relevant APIs for a query.
+  
+## Techniques for Code Analysis
+- **Vector Space Model (VSM):** Measures similarity between a query and API docs using TF-IDF (Term Frequency-Inverse Document Frequency).
+- **API-oriented search engines:** Extends queries with relevant APIs for code snippet retrieval.
+- **Text Preprocessing:**
+  - Tokenization: Segments text into words.
+  - Stop-word Removal: Eliminates common but low-value words.
+  - Stemming: Reduces words to their root form.
 
-#### V. Key Formulas/Theorems
-- **Formula/Theorem 1:** TF-IDF formula for word weighting in document representation.
-- **Formula/Theorem 2:** Cosine similarity formula for measuring vector similarity in text retrieval systems.
-- **Formula/Theorem 3:** Topic modeling equations representing documents as distributions over topics, and topics as distributions over words.
+## Code Preprocessing
+- Regarded as NLP, uses static analysis, parsing, identifier extraction, split, and expansion.
 
-#### VI. Examples
-- **Example 1:** Step-by-step process for leveraging source code for code recommendation, such as clone detection.
-- **Example 2:** Demonstration of text preprocessing techniques like tokenization, stop-word removal, and stemming on issue reports.
-- **Example 3:** Application of similarity modeling for bug localization, using information retrieval techniques and historical data.
+## Document Representation
+- **Bag-of-Words Model:** Ignores word order, focuses on word frequency.
+- **Vector Embedding:** Determines word similarity and defines relations and properties.
+- **BERT & CodeBERT:**
+  - Pre-trained models for NL-PL applications.
+  - Contextual word embeddings.
 
-#### VII. Summary/Conclusion
-- **Recap of Main Points:** The course explores the use of data mining techniques to analyze artifacts from software development, focusing on source code and issue reports, for tasks like code search, bug localization, and recommendation systems.
-- **Connections between Concepts:** Techniques such as text retrieval, vector models, machine learning, and topic modeling are interconnected in processing and understanding both natural language and source code.
+## Clone Detection
+- **Code Clone:** Refers to similar or identical code fragments.
+- **Types of Clones:**
+  - Type-1: Exact copies excluding whitespace and comments.
+  - Type-2: Structurally identical with variable names variations.
+  - Type-3: Syntactically similar with possible statement alterations.
+  - Type-4: Different syntax but similar semantics.
 
-#### VIII. Additional Resources
-- **Textbook Pages:** Not specified.
-- **Online Resources:** 
-  - GitHub CodeBERT: https://github.com/microsoft/CodeBERT
-  - BERT as a service: https://github.com/hanxiao/bert-as-service
-  - Example code search tool CodeHow: ASE 2015 publication by Wang et al.
+## Code Completion
+- **Statistical Language Models:** Predicts next word based on previous n words.
+- **Deep Learning Models:** GPT series, CodeBERT, focus on predicting the next word with all previous context.
+
+## Issue Reports
+- Bug and feature requests encountered by users, containing descriptions, reproduction steps, severity, affected parts, and failure traces.
+- Repositories such as GitHub, Jira, Bugzilla.
+  
+## Bug Localization Techniques
+- **Modeling Similarity of Bug Reports:**
+  - Uses information retrieval techniques like VSM with tfidf.
+  - Considers the bug proneness of files based on history.
+  - Relates current reports to previous ones for similarity.
+
+## Developer Recommendation for Issue Fixing
+- Leverages activity profile and expertise (commit, ownership, review history).
+- Topic modeling to match developer expertise with bug report topics.
+
+## Topic Modeling
+- **Latent Dirichlet Allocation (LDA):**
+  - Document represented as a mixture of topics.
+  - Topics represented as a mixture of words.
+  - Used for dimensionality reduction, data exploration, and linking related terms.
+
+## References & Acknowledgements
+- Credits to Dr. David Lo, Dr. Lingxiao Jiang, Dr. Jiawei Han, Dr. Emily Fox, and Carlos Guestrin.
+- Research papers and tools mentioned in slides.
+
+## Source Code Leveraging
+- Applications:
+  - Code recommendation
+  - Code completion
+
+## Artifact: Issue Reports
+- Components:
+  - Description, steps, severity, affected parts, failure traces
+
+## Bug Localization
+- Introduction:
+  - Locating bug-related files in large programs
+- Techniques:
+  - Similarity modeling
+  - Bug proneness modeling
+  - History-based bug prediction
+- Similarity Modeling:
+  - Vector space model, tf-idf weighting
+- Bug Proneness:
+  - Recent bug occurrences predict future bugs
+
+## Model & Techniques
+- Model:
+  - Similarity of bug reports and files/methods
+  - Previous bug report similarity
+- Techniques:
+  - Capture file frequency, commit time
+  - Avoiding duplicate bug reports
+- Hybrid Techniques
+
+## Applications & Recommendations
+- Applications:
+  - Recommending developers to fix bugs
+  - Predicting bug severity
+
+## Leveraging Expertise
+- Techniques:
+  - Leverage activities profile
+  - Leverage expertise using topic models
+- Matching developers with bug reports based on expertise
+
+## Stack Overflow Data Mining
+- Data Types:
+  - Text, code snippets, votes, tags
+- Leveraging Crowd Knowledge:
+  - Mining SE crowd knowledge data
+
+## Source Code Reuse from Stack Overflow
+- Code Reuse:
+  - Example snippet usage in GitHub projects
+- Identifying Reused Code:
+  - Determining reused code snippets from SO
+
+## Large-Scale Survey & Study
+- Exploratory Study:
+  - Analyzing code reuse, modification frequency
+- Survey Findings:
+  - % of reused code, difficulties faced
+
+## Challenges & Solutions
+- Challenges Faced:
+  - Code quality, outdated code
+- Proposed Solutions:
+  - Integrated validator, answer quality improvement
+
+## WordNet in SE
+- Importance:
+  - Mitigating data sparsity issues
+- Application:
+  - Identifying software-specific terms
+  - Leverage Stack Overflow to identify word regularities
+
+## Approach & Data Collection
+- Data Sources:
+  - Stack Overflow (specific corpus)
+  - Wikipedia (domain agnostic corpus)
+- Pre-processing:
+  - Text cleaning, tokenization, phrase detection
+- Building Vocabulary:
+  - Identifying software-specific terms in the corpus
 
 ---
 
-Notes: 
-Software Engineering IIData-driven Software Engineering
-Lecturer: Shaowei Wang
-
-Email: shaowei@cs.umanitoba.ca
-Big data of software engineering
-2
-Large amount of artifacts are generated in the software development process
-Increased amount of data available in software archives through large open source projects
-Data-driven software engineering
-What types of software data are available?
-Which software engineering tasks can be assisted?
-Which data mining techniques can be used?
-
-3
-Artifact: Source Code
-4
-Artifact: Source Code
-Where to find code?
-GitHub
-
-
-
-
-
-
-
-How to analyze source code?
-Analyze -> automatically parse and understand, model using program analysis tools
-5
-Artifact: Source Code
-Variety in code
-Various programming languagesVarious scale: small, medium, large
-Various complexities
-Various systems (for web, mobile, etc.)
-Various programming styles
-
-
-6
-What can we do with source code?
-
-Leveraging source code
-Code recommendation
-Clone detection
-Code completion
-…
-
-Applications
-CodeHow: Improving code searching  by leveraging API documentation
-API recommendation + Source code search
-CodeHow: Effective Code Search Based on API Understanding and Extended Boolean Model, Wang, et al, ASE 2015
-
-
-10
-Developers leverage an enormous number of APIs when building systems
-Current code search engines mostly treat code as text (text-oriented)
-11
-Ohloh  code
-Current code search engines mostly treat code as text (text-oriented)
-12
-Ohloh  code
-
-Query: 
-read file line by line
-
-Collection of APIs with their online docs
-13
-Identify 
-relevant APIs
-Identify relevant APIs to a Query using online API documentation
-14
-Query: read file line by line
-Use a Vector Space Model to measure the similarity between a Query and the API docs
-15
-
-Query: 
-read file line by line
-
-Extended Query: 
-original query + relevant APIs (e.g., File.Readlines())
-
-16
-Collection of APIs with their online docs
-Identify 
-relevant APIs
-Code retrieval in API-oriented code search engine
-17
-void readFileLines(String file){
-Var lines = File.ReadLines(file);
-Foreach(var line in lines){
-	Console.print(line);
-}
-}
-
-Extended query (EQ)
-Code snippet (C)(Method level)
-
-Method body
-
-Extended Boolean Model 
-Extended Boolean Model 
-Similarity (EQ, C) = 
-18
-Code retrieval in API-oriented code search engine
-
-Query: 
-read file line by line
-
-19
-Extended Query: 
-original query () + relevant APIs (e.g., File.Readlines())
-
-Collection of APIs with their online docs
-Identify 
-relevant APIs
-int i; 
-int sum = 0; 
-int product = 1; 
-int w = 7; 
-String path = “/home/”;
-for(i = 1; i < N; ++i) { 
-	sum = sum + i + w; 	product = product * i; 
-}
-File f = new File(path)
-f.writeline(sum); 
-print(product); 
-
-20
-Remove irrelevant code using slicing
-int i; 
-int sum = 0; 
-int product = 1; 
-int w = 7; 
-String path = “/home/”;
-for(i = 1; i < N; ++i) { 
-	sum = sum + i + w; 	product = product * i; 
-}
-File f = new File(path)
-f.writeline(sum); 
-print(product); 
-
-
-int i; 
-int sum = 0; 
-int w = 7; 
-String path = “/home/”;
-for(i = 1; i < N; ++i) { 
-	sum = sum + i + w; 
-}
-File f = new File(path)
-f.writeline(sum); 
-
-21
-Remove irrelevant code using slicing
-
-22
-Save image as png
-Query: read file line by line
-Vectorization and similarity calculation
-23
-Text Preprocessing
-Tokenization
-Stop-word Removal
-Stemming
-24
-Text: Tokenization
-Breaking a document into its constituent tokens or terms
-In a textual document, a token is typically a word.
-
-Steps:
-Segmenting text into words. Most existing tokenizers signal token boundaries by white spaces. 
-Handling Abbreviations
-	E.g., Str is abbreviation of String. 
-3. Handling Hyphenated Words
-	E.g., visual-studio
-4. Numerical and special expressions
-	E.g., I installed an eclipse 4.3
-
-
-
-
-25
-Note: if you consider social media, you might need more text normalization techniques. 
-Tokenization Example
-"I said, 'what're you? Crazy?’
-26
-Text: Stop-Word Removal
-stop words = extremely common words which would appear to be of little value in helping select documents matching a user need
-Examples: a, an, and, are, as, at, be, by, for, from, has, he, in, is, it, its, of, on, that, the, to, was, were, will, with
-Stop word elimination used to be standard in older IR systems.
-But you need stop words for phrase queries, e.g. “King of Denmark”
-Most web search engines index stop words.
-
-Note: better try both, with stop-word, after removal, any improvement? 
-Top 1% word?
-27
-Text: Stemming
-Definition of stemming: Crude heuristic process that chops off the ends of words to reduce related words to their root form
-
-E.g., automate, automatic, automation all reduce to automat
-
-Porter’s Algorithm 
-Most common algorithm for stemming English
-Results suggest that it is at least as good as other stemming options
-Used to reduce the variation of words and vobaculary 
-
-28
-Should I use stemming?
-Depends: stemming can increase effectiveness for some queries and decreases effectiveness for others.
-Queries where stemming is likely to help: 
-[tartan sweaters], [sightseeing tour san francisco] 
-(equivalence classes: {sweater,sweaters}, {tour,tours})
-Increase recall
-Queries where stemming hurts:
-[operational research], [operating system], [operative dentistry]
-Lose information
-
-29
- Code Preprocessing
-Regard  as NLP
-Leveraging static analysis
-Parsing
-Identifier Extraction
-Identifier Split
-Identifier Expansion 
-30
-void readFileLines(String file){
-Var lines = File.ReadLines(file);
-Foreach(var line in lines){
-	Console.print(line);
-}
-}
-Code: Parsing
-Creating an abstract syntax tree (AST) of the code.
-Identify which ones are variable names, which ones are method calls, etc.
-Difficulties:
-Multiple languages
-Partial code (imcomplete code snippets)
-Tools:
-ANTLR
-Java parser
-
-31
-Code: Identifier Extraction
-Extract the names of identifiers in the code.
-Method names
-Variable names
-Parameter names
-Class names
-Extract the comments in the code
-`
-32
-Code: Identifier Split
-Break identifier names into tokens.
-printLine => print line 
-System.out.println => system out println
-Many identifier names are in camel casing (printLine) or underscore (print_line).
-When no Camel Case convention or other separator is used, e.g., fixbug, we need rules/patterns to auto split identifier. 
-
-Why do we need to break identifier names?
-Reduce vocabulary and increase recall
-Do all identifiers need to be broken?
-No always
-33
-Code: Identifier Expansion
-Mapping soft-words to their corresponding domain concepts.
-It is helpful for programming languages (e.g., C and C++) that favor the use of short identifiers. 
-34
-Ref.An Empirical Study of Abbreviations and Expansions in Software Artifacts
-representation
-Document Representation
-Bag-of-Word Model
-Term Frequency (TF)
-Word2vec
-BERT
-
-35
-Bag-of-words document representation
-Word weighting
-In the bag-of-words representation each word is represented as a separate variable having numeric weight (importance)
-The most popular weighting schema is normalized word frequency TFIDF:
-
-
-
-Tf(w) – term frequency (number of word occurrences in a document)
-Df(w) – document frequency (number of documents containing the word)
-N – number of all documents
-TfIdf(w) – relative importance of the word in the document
-
-The word is more important if it appears 
-several times in a target document
-
-The word is more important if it appears in less documents
-Bag of Words Consideration
-We consider a document as a multi-set of its constituent words (or terms).
-We do not consider the order of words in a document.
-John is quicker than Mary, and 
-Mary is quicker than John 
-are represented the same way.
-
-
-38
-Vector Embedding: Word Similarity
-Word embeddings depend on a notion of word similarity. 
-
-A very useful definition is paradigmatic similarity:
-Similar words occur in similar contexts. They are exchangable.
-e.g., we can remove/discard the word from the string.
-
-This definition supports unsupervised learning: cluster or embed words according to their contexts.  
-
- 
-How to “transfer” or “share” knowledge between words?
-Idea: representing a word by means of its neighbors
-39
-Word2vec: Local contexts
-Word2vec uses words a few positions away from each center word. 
-
-“It was a bright cold day in April, and the clocks were striking”
-Center word: red
-Context words: blue
-
-Embedding: word2vec
-
-40
-word2vec
-2 basic neural network models:
-Continuous Bag of Word (CBOW): use a window of word to predict the middle word
-Skip-gram: use a word to predict the surrounding ones in window. 
-41
-Faster, good for frequent words
-Represents well even rare words
-Word2vec: Local contexts
-Local contexts capture much more information about relations and properties :
-
-
-42
-BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
-43
-https://github.com/hanxiao/bert-as-service
-BERT can generate different word embeddings for a word that captures the context of a word 
-CodeBERT
-CodeBERT learns general-purpose representations that support downstream NL-PL applications such as natural language code search, code documentation generation
-It is trained with Transformer-based neural architecture
-Use comment-code pair for training
-44
-CodeBERT: A Pre-Trained Model for Programming and Natural Languages, Feng  et al. EMNLP 2020
-45
-https://github.com/microsoft/CodeBERT
-Leveraging source code
-Code recommendation
-Clone detection
-Code completion
-…
-
-Applications
-Code clone
-Code clone refers to the code fragments with similar/same semantics (function)
-E.g., If a bug is identified in one segment of code, all the similar segments need to be checked for the same bug.
-Clone types
-Type-1: code fragments that are accurate copies of  each other, excluding whitespaces, blank lines, and comments. 
-Type-2: structurally identical code fragments that may differ in the names of variables, literals and functions.
-Type-3: syntactically similar code fragments that, may include changes like added or removed statements.
-Type-4: clones are code fragments with a different syntax, but similar semantics.
-
-
-
-
-Code snippet 1
-Vectorization and similarity calculation
-49
-Code snippet 2
-Use CodeBERT
-Use CodeBERT
-Leveraging source code
-Code recommendation
-Code clone
-Code completion
-…
-
-Applications 
-Code completion
-https://www.tabnine.com/
-N-gram language models
-
-
-
-Determine the ith word based on previous n words. 
-
-Statistic language model
-Code completion with statistical language models. Raychev V, Vechev M, Yahav E. In Proceedings of the 35th ACM SIGPLAN Conference on Programming Language Design and Implementation 2014.
-N-gram language models
-
-
-
-
-
-
-Statistic language model
-Statistic language model
-Limitation of traditional language models
-Performance improves with keeping around higher n-grams counts (e.g., 4,5,6,7) and doing smoothing.
-There are a lot of n-grams
-“using one machine with 140GB Ram for 2.5 days we built an unpruned model on 126 billion tokens”
-
-55
- Transformer-based language model
-The model is trained with a simple objective: predict the next word, given all of the previous words within some text. 
-GPT; GPT2; Xcode
-Code and paper (https://openai.com/blog/better-language-models/)
-
-
-
-Deep learning models
-Self-attention – capture the relationship of different words
-
-https://jalammar.github.io/illustrated-transformer/
-References & Acknowledgements
-Many slides and images of this course are taken or adapted from:
-Dr. David Lo and Dr. Lingxiao Jiang’s Software Mining Course 
-Dr. Jiawei Han’s Pattern Discovery in Data Mining Course
-Dr. Emily Fox and Carlos Guestrin’s Clustering and Retrieval Course
-The research papers mentioned in the slides.
-
-
-
-Artifact: Issue Reports
-People report bugs and feature requests that they encounter in the field
-Information inside issue reports:
-Description of the issue
-Steps to reproduce the issue
-Severity level (priority?)
-Parts of the system affected by the issue
-Failure traces
-59
-Artifact: Issue Reports
-Various kinds of issue repositories
-GitHub
-Jira
-Bugzilla
-Etc.
-60
-Applications
-Bug localization
-61
-Bug localization: Introduction
-Program is often large with thousands of files.
-Given a bug report, how to locate files responsible for the bug? 
-A (semi) automated solution is needed.
-62
-Bug Localization: Technique
-Model the similarity of bug reports and files/methods
-Model the bug proneness of files
-Number of bugs in a file (based on its history)
-Model the similarity of previous bug reports
-63
-Model the similarity of bug reports and files
-Information retrieval techniques to calculate the similarity between reports and files
-Vector space model – tfidf weighting
-
-64
-65
-Vector_q [1,0.4, 0.2,…]
-Vector_f1 [0.2,0.4, 0.6,…]
-Vector_f2 [0.2,0.4, 0.6,…]
-Vector_f2 [0.2,0.4, 0.6,…]
-Text pre-processing
-Pre-processing code
-66
-Vector_q [1,0.4, 0.2,…]
-Vector_f1 [0.2,0.4, 0.6,…]
-Vector_f2 [0.2,0.4, 0.6,…]
-Vector_f2 [0.2,0.4, 0.6,…]
-Text pre-processing
-similarity
-Pre-processing code
-VSM: Retrieval
-Represent documents and queries as vectors
-Compute the similarity between the vectors
-Cosine similarity is normally used:
-
-
-
-
-
-
-Return top-k most similar documents
-qi is the tf-idf weight of term i in the query
-di is the tf-idf weight of term i in the document
-67
-68
-Weighting on different components
-log
-Stack trace
-Model the similarity of bug reports and files
-Information retrieval techniques to calculate the similarity between reports and files
-Vector space model – tfidf weighting
-Word2vector
-Doc2vector
-
-69
-Bug Localization: Technique
-Model the similarity of bug reports and files/methods
-Model the bug proneness of files
-Number of bugs in a file (based on its history)
-Model the similarity of previous bug reports
-70
-Model the bug proneness of files
-Observation: a file that occurs a bug recently is more likely to happen bugs again.
-Similar bugs usually happen in burst and not in isolation. 
-71
+# Class Notes
+
+---
+
+### Slide: 1
+**Title:** Software Engineering IIData-driven Software Engineering -2  
+**SubTitle:** Lecturer: Shaowei Wang  
+Email: shaowei@cs.umanitoba.ca  
+
+### Slide: 2
+**Title:** Administrative item  
+- Sprint 4's deadline is postponed to Dec 1st (Friday)  
+- Final project deliverable is due on Dec 15th  
+- Final exam Schedule: Dec 13, 6 pm. [Final Exam Schedule](https://umanitoba.ca/registrar/final-exams/final-exam-schedule)  
+- Scope: Lecture 1 - 12 (including fuzz testing, excluding data-driven SE)  
+- Question type: multi-choice + problem-solving  
+- Examination format: In-person. You will be able to download a digital copy of the test (word file) from UMlearn and submit it to UMLearn  
+- Guideline: The exam is open book. You are allowed to access class notes, textbooks, and slides. However, no search online and the use of generative AI (e.g., ChatGPT) is not allowed  
+
+### Slide: 3
+**Source Code**  
+- Issue Report  
+- Question Answering Pairs: Stack Overflow  
+- Pull Requests  
+- Traces/Logs  
+- What to mine?  
+- Mobile apps marketplace  
+- ...
+
+### Slide: 4
+**Leveraging source code**  
+- Code recommendation  
+- Code completion  
+- ...  
+**Title:** Applications  
+
+### Slide: 5
+**Source Code**  
+- Issue Report  
+- Question Answering Pairs: Stack Overflow  
+- Pull Requests  
+- Traces/Logs  
+- What to mine?  
+- Mobile apps marketplace  
+- ...
+
+### Slide: 6
+**Title:** Artifact: Issue Reports  
+People report bugs and feature requests that they encounter in the field  
+Information possibly in issue reports:
+- Description of the issue  
+- Steps to reproduce the issue  
+- Severity level (priority?)  
+- Parts of the system affected by the issue  
+- Failure traces  
+
+### Slide: 7
+**Title:** Artifact: Issue Reports  
+Various kinds of issue repositories  
+- GitHub  
+- Jira  
+- Bugzilla  
+- Etc.  
+
+### Slide: 8
+**Title:** Applications  
+Bug localization – given a bug report, identify the bugs in the source code.  
+
+### Slide: 9
+**Title:** Bug localization: Introduction  
+Program is often large with thousands of files.  
+Given a bug report, how to locate files responsible for the bug?  
+A (semi) automated solution is needed.  
+
+### Slide: 10
+**Title:** Bug Localization: Technique  
+Model the similarity of bug reports and files  
+Model the bug proneness of files  
+Number of bugs in a file (based on its history)  
+Model the similarity of previous bug reports  
+Wang S, Lo D. Version history, similar report, and structure: Putting them together for improved bug localization. In Proceedings of the 22nd International Conference on Program Comprehension 2014 Jun 2 (pp. 53-63).  
+
+### Slide: 11
+**Title:** Model the similarity of bug reports and files  
+Information retrieval techniques to calculate the similarity between reports and files  
+Vector space model – tfidf weighting  
+
+### Slide: 12
+**Title:** Pre-processing code  
+Vector_q [1,0.4, 0.2,…]  
+Vector_f1 [0.2,0.4, 0.6,…]  
+Vector_f2 [0.2,0.4, 0.6,…]  
+Vector_f2 [0.2,0.4, 0.6,…]  
+Text pre-processing  
+
+### Slide: 13
+Vector_q [1,0.4, 0.2,…]  
+Vector_f1 [0.2,0.4, 0.6,…]  
+Vector_f2 [0.2,0.4, 0.6,…]  
+Vector_f2 [0.2,0.4, 0.6,…]  
+Text pre-processing  
+Similarity  
+**Title:** Pre-processing code  
+
+### Slide: 14
+**Title:** VSM: Retrieval  
+Represent documents and queries as vectors  
+Compute the similarity between the vectors  
+Cosine similarity is normally used:  
+
+Return top-k most similar documents  
+qi is the tf-idf weight of term i in the query  
+di is the tf-idf weight of term i in the document  
+
+### Slide: 15
+**Title:** Weighting on different components  
+log  
+Stack trace  
+
+### Slide: 16
+**Title:** Model the similarity of bug reports and files  
+Information retrieval techniques to calculate the similarity between reports and files  
+Frequency based  
+Word counts  
+Term frequency – inverse document frequency weighting  
+Machine learning model-based  
+Word2vector  
+Doc2vector  
+BERT  
+
+### Slide: 17
+**Title:** Bug Localization: Technique  
+Model the similarity of bug reports and files/methods  
+Model the bug proneness of files  
+Number of bugs in a file (based on its history)  
+Model the similarity of previous bug reports  
+
+### Slide: 18
+**Title:** Model the bug proneness of files  
+Observation: a file that occurs a bug recently is more likely to happen bugs again.  
+Similar bugs usually happen in burst and not in isolation.  
 Predicting Faults from Cached History, by Kim et al.  
-72
-Capture frequency and time of a file being committed
-73
-Time window
-Commits in k days
-Target file
-number of days that has elapsed between a commit c and the input bug report.
-Bug Localization: Technique
-Model the similarity of bug reports and files/methods
-Model the bug proneness of files
-Number of bugs in a file (based on its history)
-Model the similarity of previous bug reports
-74
-Model the similarity of previous bug reports
-Observation: similar bugs are likely to happen in similar files
-75
 
-76
+### Slide: 19
+**Title:** Capture frequency and time of a file being committed  
+Time window  
+Commits in k days  
+Target file  
+number of days that has elapsed between a commit c and the input bug report.  
 
-77
-Model the similarity of previous bug reports
-Outline 
-Bug localization
-Prediction related studies for software bugs
-Recommend developer to fix issues
-Predict the severity of bugs
-Etc.
-78
-Recommend developer to fix issues: Introduction
-79
-Leverage activities profile
-Review, commit, ownership, resolve in the bug track system
-Leverage expertise
-Topic model
-80
-Recommend developer to fix issues: Technique
-Find similar issues reports
-81
-Fixer of the similar issues
-Reviewer of the similar issues
-Leverage activities profile
-Review, commit, ownership, resolve in the bug track system
-Leverage expertise
-Topic model
-82
-Recommend developer to fix bugs: Technique
-Topic Modeling
-Model a group of words as a topic.
-Mostly used to explore large scale of text.
-Sample papers:
+### Slide: 20
+**Title:** Bug Localization: Technique  
+Model the similarity of bug reports and files/methods  
+Model the bug proneness of files  
+Number of bugs in a file (based on its history)  
+Model the similarity of previous bug reports  
 
-83
-Topic Modeling: Black-Box View
-Model a document as a probability distribution of topics
-A topic is a probability distribution of words
-84
-Most simple and common :LDA
-Usage of Topic Modeling
-Dimensionality reduction: words -> topics
-Help with data exploration.
-Able to link a document and a query
-Do not have share any words
-Share related words of the same topics
+### Slide: 21
+**Title:** Model the similarity of previous bug reports  
+Observation: similar bugs are likely to happen in similar files  
+Check out bug report before submitting a new bug report, to avoid duplicate.  
 
-85
-86
-comments
-Fixed bugs
-Developed project/component/files
-Tags
-Leverage expertise
-Model expertise of developers using topic model
-VD_comment[t1,t2,… tk], VD_development[t1,t2,… tk]
-Model the required expertise of a bug report using topic model
-VB[t1,t2,… tk]
-Match developers and bug reports based on their expertise
-Calculate similarity
-87
+### Slide: 22
+
+### Slide: 23
+**Title:** Model the similarity of previous bug reports  
+
+### Slide: 24
+**Title:** Hybrid technique  
+
+### Slide: 25
+**Title:** Other applications  
+Recommend developer to fix bugs  
+Predict the severity of bugs  
+Etc.  
+
+### Slide: 26
+**Title:** Recommend developer to fix bugs: Introduction  
+
+### Slide: 27
+Leverage activities profile  
+Ownership, review, resolve in the bug track system  
+Leverage expertise  
+Topic model  
+**Title:** Recommend developer to fix bugs: Technique  
+
+### Slide: 28
+**Title:** Find similar bug reports  
+The fixer of the similar bugs  
+Reviewer of the similar bugs  
+
+### Slide: 29
+Leverage activities profile  
+Review, commit, ownership, resolve in the bug track system  
+Leverage expertise  
+Topic model  
+**Title:** Recommend developer to fix bugs: Technique  
+
+### Slide: 30
+**Title:** Topic Modeling: Black-Box View  
+Model a document as a probability distribution of topics  
+A topic is a probability distribution of words  
+Most simple and common :LDA  
+
+### Slide: 31
+**Title:** Usage of Topic Modeling  
+Dimension
+
+ality reduction: words -> topics  
+Help with data exploration.  
+Able to link a document and a query  
+Do not have share any words  
+Share related words of the same topics  
+
+### Slide: 32
+(Gp:) Developer  
+comments  
+Fixed bugs  
+Developed project/component/files  
+Tags  
+**Title:** Leverage expertise  
+
+### Slide: 33
+**Title:** Leverage expertise  
+Model expertise of developers using topic model  
+Match developers and bug reports based on their expertise  
+Topic matching  
+Calculate similarity  
+
+### Slide: 34
+
+### Slide: 35
+**Title:** Various types of data on Stack Overflow  
+Text description  
+Code snippets  
+votes  
+Tags  
+
+### Slide: 36
+**Title:** Mining & leveraging big SE crowd knowledge data  
+Mining big SE crowd knowledge data  
+[Stack Exchange Academic Papers](https://meta.stackexchange.com/questions/134495/academic-papers-using-stack-exchange-data)  
+
+### Slide: 37 to Slide: 39
+
+### Slide: 40
+**Title:** How do developers utilize source code from Stack Overflow?  
+[Empirical Software Engineering Journal(EMSE) 2018](journalURL)  
+Yuhao Wu et al.  
+
+### Slide: 41
+```
+function generateID() {
+    return "avalon" + 
+        Math.random().toString(36).substring(2, 15) + 
+        Math.random().toString(36).substring(2, 15)
+}
+```
+**Title:** Developers reuse source code from S.O. posts  
+Source code in a GitHub project  
+An answer on Stack Overflow  
+
+### Slide: 42
+**Title:** How we can know a code snippet was reused from SO  
+
+### Slide: 43
+**Title:** Structure of this study  
+- Part I: Exploratory Study  
+- Part II: Survey  
+How do developers reuse source code?  
+How do you think S.O. can be improved?  
+Responses  
+
+### Slide: 44
+**Title:** Part I: Exploratory study  
+searchcode.com  
+“stack_overflow”  
+4,878 source files  
+Filter  
+289 files  
+Analyze code reuse  
+RQ1: modification frequency and reason  
+RQ2: origin of code reuse  
+
+### Slide: 45
+Only 21% of the code are copied exactly  
+32% of the reused source code snippets require additional modification (C2+C3)  
+Developers adopt answers based on different needs: simplicity, correctness, efficiency, etc.  
+**Title:** 26% of the source code was reused from non-accepted answers  
+
+### Slide: 46
+43%  
+26%  
+1%  
+30%  
+An advanced tagging system might be helpful  
+**Title:** 26% of the source code was reused from non-accepted answers  
+
+### Slide: 47
+**Title:** Part II: Large-scale survey on 400+ participants  
+Experience  
+Type of project participated  
+Difficulties in reusing source code  
+Opinions on OSS licenses  
+Usefulness of proposed advanced tagging system  
+Any other suggestions  
+Demography (7)  
+Barriers (10)  
+Suggestions (2)  
+Survey Questions  
+
+### Slide: 48
+**Title:** Most suggestions are on code quality  
+35%  
+24%  
+13%  
+12%  
+10%  
+
+### Slide: 49
+**Title:** Suggestions: improving code quality (35% of all categories)  
+Integrated validator (42.2%)  
+Outdated code (29.7%)  
+Answer quality (17.2%)  
+Code review (10.9%)  
+
+### Slide: 50
+Beyer, S., Macho, C., Di Penta, M. and Pinzger, M., 2020. What kind of questions do developers ask on Stack Overflow? A comparison of automated approaches to classify posts into question categories. Empirical Software Engineering, 25(3), pp.2258-2301.  
+Yang, X.L., Lo, D., Xia, X., Wan, Z.Y. and Sun, J.L., 2016. What security questions do developers ask? a large-scale study of stack overflow posts. Journal of Computer Science and Technology, 31(5), pp.910-924.  
+Ahmed, S. and Bagherzadeh, M., 2018, October. What do concurrency developers ask about? a large-scale study using stack overflow. In Proceedings of the 12th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (pp. 1-10).  
+Islam, M.J., Nguyen, H.A., Pan, R. and Rajan, H., 2019. What do developers ask about ml libraries? a large-scale study using stack overflow. arXiv preprint arXiv:1906.11940.  
+Barua, A., Thomas, S.W. and Hassan, A.E., 2014. What are developers talking about? an analysis of topics and trends in stack overflow. Empirical Software Engineering, 19(3), pp.619-654.  
+**Title:** Understanding the challenges and problems that developers face  
+
+### Slide: 51
+**Title:** Mining & leveraging big SE crowd knowledge data  
+Leveraging big SE crowd knowledge data  
+[Stack Exchange Academic Papers](https://meta.stackexchange.com/questions/134495/academic-papers-using-stack-exchange-data)  
+
+### Slide: 52
+**Title:** We need a thesaurus to contain software-specific terms and commonly-used morphological forms  
+We have different morphological forms (abbreviations, synonyms and misspellings)  
+
+### Slide: 53
+**Title:** We need a thesaurus to contain software-specific terms and commonly-used morphological forms  
+We have existing general thesaurus for morphological forms  
+Wordnet (https://wordnet.princeton.edu/)  
+Same word in SE and in other domain may have different meaning  
+
+### Slide: 54
+**Title:** Why we care about this?  
+Identify various morphological forms of the same concept may also mitigate data sparsity problems when applying NLP techniques for various applications -> reduce the vocabulary size  
+Information retrieval  
+Data mining  
+
+### Slide: 55
+**Title:** Leverage Stack Overflow to train a model to identify the relational regularities  
+SEthesaurus: WordNet in Software Engineering IEEE TRANSACTIONS ON SOFTWARE ENGINEERING (TSE) 2015. Xiang Chen, Chunyang Chen, Dun Zhang, and Zhenchang Xing  
+Underlying intuition is that words with similar meaning would appear in the similar context.  
+
+### Slide: 56
+**Title:** Overview of the approach  
+**Title:** Data collection  
+
+### Slide: 57
+**Title:** Data collection  
+Software specific corpus  
+- Stack Overflow  
+- 15,930,617 questions and 24,676,333 answers  
+Domain agnostic corpus  
+- Wikipedia  
+- 8,556,773 articles  
+
+### Slide: 58
+**Title:** Overview of the approach  
+**Title:** Pre-processing  
+
+### Slide: 59
+**Title:** Pre-processing  
+Text cleaning  
+Tokenization  
+Phrase Detection  
+
+### Slide: 60
+**Title:** Overview of the approach  
+**Title:** Building software-specific vocabulary  
+
+### Slide: 61
+**Title:** Building software-specific vocabulary  
+Identify software-specific terms by contrasting the frequency of a term in the software-specific corpus compared with its frequency in the general corpus  
+
